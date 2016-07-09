@@ -1,29 +1,27 @@
 # stremio-addons-client
-An example client to the Stremio add-ons protocol, similar to Stremio's Discover. Because the desktop app is nothing more but a client to the add-ons system, this is basically **an open-source Stremio**.
-![Stremio add-ons client](/screenshots/stremio-addons-client.png)
+An example client to the Stremio add-ons protocol, similar to Stremio's Board. Because the desktop app is nothing more but a client to the add-ons system, this is basically **an open-source Stremio**.
+![Stremio add-ons client](/screenshots/board-1.png)
 
 ## What's this?
-It's an example client of the [stremio-addons](http://github.com/Stremio/stremio-addons) system (which is a multi-client RPC lib). 
-It mimics Stremio's Discover interface, and shows all available streams gathered from all add-ons for a selected movie/series/channel/etc.
+It's an example client of the [stremio-addons](http://github.com/Stremio/stremio-addons) system. 
+It mimics Stremio's Board interface, and shows all catalogues of movie/series/channel/etc that can be gathered for all the connected add-ons (by default, all official ones).
 
 **The main purpose of this is to aid developers in creating their own Stremio add-on by showing them how the actual app(s) utilize the add-on client.**
 
 ## How to run
 ```bash
-git clone http://github.com/Stremio/stremio-addons-client
-cd stremio-addons-client
+git clone http://github.com/Stremio/stremio-addons-client-board
+cd stremio-addons-client-board
 npm install
 npm start
 # open browser at http://localhost:9900
 ```
 
-##### Open your browser at http://localhost:9900/#?addon=ADDON_URL for your own end-point
-
 ## What are Stremio add-ons
 
 **Stremio add-ons extend Stremio with content.**
 
-That means either adding items to Discover or providing sources to stream content farom.
+That means either adding items to Discover/Board or providing sources to stream content farom.
 
 Unlike regular software plugins, Stremio addons **do not run inside Stremio**, but instead are **accessed through HTTP over network**. You can think of them as **RSS on steroids**. Multiple addons can be activated, providing you more content, without installation or security risks.
 
@@ -52,10 +50,3 @@ You can see all known hosted Stremio add-ons at [addons.strem.io](http://addons.
 ## How to create my own add-on?
 ### [Follow the guidelines here.](https://github.com/Stremio/stremio-addons/blob/master/documentation/home.md)
 
-## How to use this to test my add-on
-
-You can and should use this module to test your add-on before trying it in Stremio, because this module is open-source and you can see what calls it makes to your add-on and why.
-
-To **enable your add-on**, add it's local endpoint (e.g. http://localhost:5555) via the bar on the bottom of the Add-ons tab:
-
-![Enable custom add-on](/screenshots/enable-addon.png)
