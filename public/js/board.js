@@ -22,6 +22,8 @@ stremio.on("addon-ready", function(addon) {
 		((sort && sort.types) || addon.manifest.types).forEach(function(type) {
 			if (!type) return;
 			
+			if ( (sort && sort.countrySpecific) || addon.manifest.countrySpecific) return;
+			
 			var args = { query: { type: type }, limit: 50 };
 			if (sort) {
 				args.sort = { };
