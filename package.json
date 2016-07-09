@@ -24,8 +24,11 @@
   "homepage": "https://github.com/Ivshti/stremio-addons-client-board",
   "dependencies": {
     "express": "4.x.x",
+    "jade": "^1.11.0",
     "monkberry": "^4.0.7",
-    "stremio-addons": "2.0.0"
+    "nib": "^1.1.0",
+    "stremio-addons": "2.0.0",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {}
 }
