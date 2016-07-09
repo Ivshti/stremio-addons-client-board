@@ -1,0 +1,31 @@
+{
+  "name": "stremio-addons-client-board",
+  "version": "1.5.0",
+  "description": "An example client to the Stremio add-ons protocol, similar to Stremio's Board",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/*",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Ivshti/stremio-addons-client-board"
+  },
+  "keywords": [
+    "stremio",
+    "stremio-addons",
+    "client"
+  ],
+  "author": "Ivo Georgiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ivshti/stremio-addons-client-board/issues"
+  },
+  "homepage": "https://github.com/Ivshti/stremio-addons-client-board",
+  "dependencies": {
+    "express": "4.x.x",
+    "monkberry": "^4.0.7",
+    "stremio-addons": "2.0.0"
+  },
+  "devDependencies": {}
+}
