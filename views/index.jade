@@ -12,14 +12,13 @@ html
 	body
 
 		script(type="text/monkberry",id="BoardItem").
-			<li>
-				<h3>{{item.name}}</h3>
+			<li style="background-image: url({{ item._poster }})">
+				<!--<h3>{{item.name}}</h3>-->
 			</li>
-			<!--<img src="{{ item._poster }}"/>-->
 
 		script(type="text/monkberry",id="BoardRow").
 			<h2>{{ group.type }}</h2>
-			<ul>
+			<ul class="{{ group.items[0].posterShape }}">
 				{% for item of group.items %}
 					<BoardItem item={{ item }}/>
 				{% endfor %}

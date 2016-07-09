@@ -48,7 +48,8 @@ function pullMetaGroup(addon, args, sort) {
        		type: args.query.type,
        		sort: sort,
        		addon: addon,
-       		items: res.slice(0,15).map(function(x) { return new metadata(x) })
+       		items: res.slice(0,6).map(function(x) { return new metadata(x) }),
+
        	};
 
        	updateView();

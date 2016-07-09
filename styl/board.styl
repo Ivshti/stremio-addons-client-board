@@ -9,9 +9,21 @@ ul, li
 .boardRow
 	ul
 		white-space nowrap
-		overflow auto
 	li 
-		width 20%
-		margin 2.5%
+		background-size cover
+		width 15%
 		display inline-block
-		
+				
+		&:before 
+			content: "";
+			display: block;
+			padding-top: 146.4%
+	
+	.square li
+		&:before
+			padding-top: 100%
+	
+	.landscape li
+		&:before
+			padding-top: 56.25%
+	
