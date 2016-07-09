@@ -23,7 +23,7 @@ stremio.on("addon-ready", function(addon) {
 			if (!type) return;
 			
 			if ( (sort && sort.countrySpecific) || addon.manifest.countrySpecific) return;
-			
+
 			var args = { query: { type: type }, limit: 50 };
 			if (sort) {
 				args.sort = { };
@@ -78,7 +78,7 @@ function metadata(d) {
 
 var view;
 window.onload = function() {
-	view = Monkberry.render(Board, document.body);
+	view = Monkberry.render(Board, document.body, { });
 	view.update({ groups: groups });
 }
 
@@ -109,7 +109,6 @@ function updateSelected() {
 	document.querySelector('.boardItem.focused').classList.remove('focused');
 	document.querySelector('.boardItem[data-id="'+selected+'"]').classList.add('focused');
 }
-
 
 document.onkeydown = function(e) {
 	var first = firstItem();
@@ -146,3 +145,8 @@ document.onkeydown = function(e) {
 	location.href = "#";
 	location.href = "#"+groupKeys[y];
 };
+
+document.onclick = function(e) {
+	if (e.target.classList.contains('boardItem')) selected = e.target.getAttribute('data-id');
+	updateSelected()
+}
