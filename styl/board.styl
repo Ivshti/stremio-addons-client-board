@@ -7,18 +7,25 @@ ul, li
 	list-style none
 	
 .boardRow
+	h2
+		text-align center
 	ul
 		white-space nowrap
+
 	li 
 		background-size cover
 		width 15%
 		display inline-block
-				
+		transition all 0.3s ease-in 
+		
 		&:before 
 			content: "";
 			display: block;
 			padding-top: 146.4%
-	
+		
+		&.focused
+			transform scale(1.3)
+			
 	.square li
 		&:before
 			padding-top: 100%

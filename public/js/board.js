@@ -84,7 +84,20 @@ var timeout;
 function updateView() {
 	//if (view) view.update({ groups: groups })
 	if (timeout) clearTimeout(timeout);
-	timeout = setTimeout(function() { if (view) view.update({ groups: groups }) }, 100);
+	timeout = setTimeout(function() { 
+		if (view) view.update({ groups: groups });
+		updateSelected();
+	}, 150);
 }
 
+var selected;
+function updateSelected() {
+	var groupKeys = Object.keys(groups);
 
+	if (!selected)  {
+		var firstGroup = groups[groupKeys[0]];
+		var firstItem = firstGroup && firstGroup.items && firstGroup.items[0];
+		document.querySelector('.boardItem[data-id='+firstGroup.items[0]._id+']').classList.add('focused');
+	}
+
+}
