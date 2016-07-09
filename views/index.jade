@@ -4,13 +4,12 @@ html
 		title Stremio Board
 		link(rel="stylesheet", href="/stylesheets/board.css")
 		script(src="/js/stremio-addons.min.js")
-		script(src="/js/monkberry/monkberry.js")
-		//- script(src="https://cdn.jsdelivr.net/monkberry-standalone/4.0.2/monkberry.min.js")
-
-		script(type="text/monkberry",id="BoardRow")
-			h2 Hi {{type}}
+		script(src="https://cdn.jsdelivr.net/monkberry-standalone/4.0.2/monkberry.min.js")
+		//-script(src="/js/monkberry/monkberry.js")
 
 		script(src="/js/board.js")
 
 	body
-		h1 Stremio Board
+
+		script(type="text/monkberry",id="BoardRow")
+			h2 {{type}}

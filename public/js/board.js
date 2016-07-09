@@ -53,7 +53,9 @@ function pullMetaGroup(addon, args, sort) {
     });
 }
 
-//var view = Monkberry.render(BoardRow, document.body);
-//view.update({ type: 'movie' });
+window.onload = function() {
+	var view = Monkberry.render(BoardRow, document.body);
+	view.update({ type: 'movie' });
+}
 
 
