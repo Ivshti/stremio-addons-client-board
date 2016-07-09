@@ -17,7 +17,7 @@ html
 			</li>
 
 		script(type="text/monkberry",id="BoardRow").
-			<h2>{{ group.type }}</h2>
+			<h2>{{ group.type + ' ' + group.addon.manifest.name }}</h2>
 			<ul class="{{ group.items[0].posterShape }}">
 				{% for item of group.items %}
 					<BoardItem item={{ item }}/>
