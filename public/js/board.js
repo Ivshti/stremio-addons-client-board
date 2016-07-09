@@ -146,7 +146,7 @@ document.onkeydown = function(e) {
 	location.href = "#"+groupKeys[y];
 };
 
-document.onclick = function(e) {
+document.onclick = document.ontouchstart = function(e) {
 	if (e.target.classList.contains('boardItem')) selected = e.target.getAttribute('data-id');
 	updateSelected()
 }
