@@ -1,14 +1,24 @@
+html
+	background-image url('https://www.strem.io/3.0/background-0.jpg')
+	background-size cover
+	background-attachment fixed
+	user-select none
+
 html, body
 	margin 0
 	padding 0
 	font-family Arial, Helvetica, Sans-Serif
+	font-weight 300
+	color white
 	
 ul, li
 	list-style none
 	
 .boardRow
+	padding-top 40px
 	h2
 		text-align center
+		
 	ul
 		white-space nowrap
 
@@ -24,7 +34,8 @@ ul, li
 			padding-top: 146.4%
 		
 		&.focused
-			transform scale(1.3)
+			transform scale(1.4)
+			box-shadow 0px 0px 15px 0px rgba(0,0,0,0.4)
 			
 	.square li
 		&:before

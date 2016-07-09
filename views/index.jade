@@ -27,7 +27,7 @@ html
 		script(type="text/monkberry",id="Board")
 			ul.
 				{% for group of groups %}
-					<li class="boardRow">
+					<li class="boardRow" id="{{ group.id }}">
 						<BoardRow group={{ group }}/>
 					</li>
 				{% endfor %}
