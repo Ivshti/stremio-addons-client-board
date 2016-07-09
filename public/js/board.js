@@ -36,7 +36,7 @@ function pullMetaGroup(addon, args, sort) {
     var id = addon.identifier()+":"+args.query.type+":"+(sort && sort.prop);
 
     if (groups.hasOwnProperty(id)) return;
-    groups[id] = null;
+    groups[id] = { items: [] };
 
     stremio.fallthrough([addon], "meta.find", args, function(err, res) {
         if (err) return console.error(err);
@@ -48,14 +48,40 @@ function pullMetaGroup(addon, args, sort) {
        		type: args.query.type,
        		sort: sort,
        		addon: addon,
-       		items: res
+       		items: res.slice(0,15).map(function(x) { return new metadata(x) })
        	};
+
+       	updateView();
     });
 }
 
+function metadata(d) {
+	var self = this;
+
+	for (key in d) this[key] = d[key];
+
+	self.popularities = self.popularities || {};
+	self._id = self.id || self._id;
+
+	self.getPoster = function() {
+		if (self.imdb_id) poster = "http://img.omdbapi.com/?i="+self.imdb_id+"&apikey=a38ae05f&h=400";
+		if (self.poster) return self.poster;
+	};
+
+	self._poster = self.getPoster();
+}
+
+var view;
 window.onload = function() {
-	var view = Monkberry.render(BoardRow, document.body);
-	view.update({ type: 'movie' });
+	view = Monkberry.render(Board, document.body);
+	view.update({ groups: groups });
+}
+
+var timeout;
+function updateView() {
+	//if (view) view.update({ groups: groups })
+	if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(function() { if (view) view.update({ groups: groups }) }, 100);
 }
 
 

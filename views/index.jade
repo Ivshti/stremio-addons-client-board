@@ -11,5 +11,24 @@ html
 
 	body
 
-		script(type="text/monkberry",id="BoardRow")
-			h2 {{type}}
+		script(type="text/monkberry",id="BoardItem").
+			<li>
+				<h3>{{item.name}}</h3>
+			</li>
+			<!--<img src="{{ item._poster }}"/>-->
+
+		script(type="text/monkberry",id="BoardRow").
+			<h2>{{ group.type }}</h2>
+			<ul>
+				{% for item of group.items %}
+					<BoardItem item={{ item }}/>
+				{% endfor %}
+			</ul>
+
+		script(type="text/monkberry",id="Board")
+			ul.
+				{% for group of groups %}
+					<li class="boardRow">
+						<BoardRow group={{ group }}/>
+					</li>
+				{% endfor %}
