@@ -24,7 +24,7 @@ app.use(express.static('public'));
 app.set('port', process.env.PORT || 9900);
 
 app.get("/", function(req, res) {
-	res.render("index", { });
+	res.render("index", { videoBackground: req.query.video });
 })
 
 app.get("/js/stremio-addons.min.js", function(req, res) {

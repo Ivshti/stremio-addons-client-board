@@ -24,10 +24,15 @@ html
 				{% endfor %}
 			</ul>
 
-		script(type="text/monkberry",id="Board")
-			ul.
+		script(type="text/monkberry",id="Board").
+			<ul class="board">
 				{% for group of groups %}
 					<li class="boardRow" id="{{ group.id }}">
 						<BoardRow group={{ group }}/>
 					</li>
 				{% endfor %}
+			</ul>
+
+		if (videoBackground)
+			video(muted, preload="auto", autoplay="true", loop="loop", style="position: fixed; top: 0%; right: 0px; left: 0px; bottom: 0px;width: 100%; z-index: 0;")
+				source(src="http://www.strem.io/aurora.mp4")
