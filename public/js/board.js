@@ -10,7 +10,7 @@ var stremio = new StremioClient();
 	"https://filmon.strem.io", 
 	"https://twitch.strem.io",
 	"https://vodo.strem.io",
-	//"https://netflix.strem.io",
+	//"https://nfxaddon.strem.io",
 ].forEach(function(url) { stremio.add(url+'/stremioget/stremio/v1') }) // add legacy add-on suffix
 
 stremio.on("addon-ready", function(addon) {
